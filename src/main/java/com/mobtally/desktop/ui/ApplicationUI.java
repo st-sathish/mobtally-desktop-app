@@ -1,6 +1,7 @@
 package com.mobtally.desktop.ui;
 
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
@@ -8,6 +9,11 @@ import java.awt.event.ActionEvent;
 
 @Component
 public class ApplicationUI extends JFrame implements InitializingBean {
+
+    @Autowired
+    public ApplicationUI() {
+
+    }
 
     @Override
     public void afterPropertiesSet() throws Exception {
@@ -25,7 +31,9 @@ public class ApplicationUI extends JFrame implements InitializingBean {
         createLayout(quitButton);
 
         setTitle("Quit button");
-        setSize(300, 200);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setUndecorated(true);
+        setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
