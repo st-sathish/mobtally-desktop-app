@@ -4,5 +4,5 @@ import javax.swing.*;
 
 public interface BaseView {
 
-    void setView(JFrame jFrame);
+    void initView(JFrame jFrame);
 }

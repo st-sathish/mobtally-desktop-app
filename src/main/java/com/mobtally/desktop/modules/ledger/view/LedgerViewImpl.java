@@ -22,7 +22,7 @@ public class LedgerViewImpl implements LedgerView {
     }
 
     @Override
-    public void setView(JFrame jFrame) {
+    public void initView(JFrame jFrame) {
 
     }
 }

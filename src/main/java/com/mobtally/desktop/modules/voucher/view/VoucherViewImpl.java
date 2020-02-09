@@ -22,7 +22,7 @@ public class VoucherViewImpl implements VoucherView {
     }
 
     @Override
-    public void setView(JFrame jFrame) {
+    public void initView(JFrame jFrame) {
 
     }
 }
