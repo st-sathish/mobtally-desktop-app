@@ -1,6 +1,6 @@
 package com.mobtally.desktop.modules.company.service;
 
-import com.mobtally.desktop.modules.company.Company;
+import com.mobtally.desktop.pojo.Company;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

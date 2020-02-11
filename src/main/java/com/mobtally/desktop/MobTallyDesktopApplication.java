@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,11 +24,10 @@ import org.springframework.context.annotation.Configuration;
         DataSourceTransactionManagerAutoConfiguration.class,
         HibernateJpaAutoConfiguration.class
 })
-@EnableFeignClients
 public class MobTallyDesktopApplication {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(MobTallyDesktopApplication.class)
+        ApplicationContext context = new SpringApplicationBuilder(MobTallyDesktopApplication.class)
                 .headless(false)
                 .web(WebApplicationType.NONE)
                 .run(args);

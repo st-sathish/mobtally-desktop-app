@@ -1,7 +1,6 @@
 package com.mobtally.desktop.modules.ledger.service;
 
-import com.mobtally.desktop.modules.ledger.Ledger;
-import com.mobtally.desktop.modules.ledger.service.LedgerReadPlatformService;
+import com.mobtally.desktop.pojo.Ledger;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

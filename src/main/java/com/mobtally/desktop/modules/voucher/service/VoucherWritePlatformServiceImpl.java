@@ -2,7 +2,8 @@ package com.mobtally.desktop.modules.voucher.service;
 
 import com.mobtally.desktop.core.client.HttpClient;
 import com.mobtally.desktop.core.client.HttpClientBuilder;
-import com.mobtally.desktop.modules.voucher.Voucher;
+import com.mobtally.desktop.pojo.Voucher;
+import com.mobtally.desktop.elements.Envelop;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,9 @@ public class VoucherWritePlatformServiceImpl implements VoucherWritePlatformServ
         HttpClient httpClient = new HttpClientBuilder()
                 .build();
         try {
-            Voucher result = (Voucher) httpClient.post(data);
+            Envelop envelop = new Envelop();
+            envelop.setBody(data);
+            Envelop result = httpClient.post(envelop);
         } catch (Exception e) {
             logger.error("Exception while saving voucher {}", e.getMessage());
         }

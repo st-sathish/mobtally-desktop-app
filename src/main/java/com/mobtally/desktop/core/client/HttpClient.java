@@ -1,9 +1,9 @@
 package com.mobtally.desktop.core.client;
 
 import com.mobtally.desktop.core.BeanUtils;
-import com.mobtally.desktop.core.TallyData;
 import com.mobtally.desktop.core.config.TallyConfigService;
 import com.mobtally.desktop.core.utils.TallyHttpUtils;
+import com.mobtally.desktop.elements.Envelop;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,7 +47,7 @@ public class HttpClient {
         return "";
     }
 
-    public TallyData post(TallyData requestData) throws Exception {
+    public Envelop post(Envelop requestData) throws Exception {
         OutputStream out = null;
         BufferedReader in = null;
         HttpURLConnection httpConn = this.createConnection();
@@ -75,7 +75,7 @@ public class HttpClient {
             while (in.readLine() != null) {
                 inputLine = in.readLine();
             }
-            return new TallyData();
+            return new Envelop();
         } catch (Exception e) {
             throw e;
         } finally {
