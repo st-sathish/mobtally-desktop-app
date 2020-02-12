@@ -28,7 +28,7 @@ public class Envelop {
 
     static {
         try {
-            context = JAXBContext.newInstance("com.mobtally.desktop", Envelop.class.getClassLoader());
+            context = JAXBContext.newInstance("com.mobtally.desktop.elements", Envelop.class.getClassLoader());
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }

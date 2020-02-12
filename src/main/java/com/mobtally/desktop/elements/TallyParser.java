@@ -4,12 +4,12 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.StringWriter;
 
-public final class EnvelopParser {
+public final class TallyParser {
 
     /**
      * Private constructor to prohibit instances of this static utility class.
      */
-    private EnvelopParser() {
+    private TallyParser() {
         // Nothing to do
     }
 

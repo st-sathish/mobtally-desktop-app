@@ -7,8 +7,8 @@ public interface EnvelopBuilder {
      * <code>java.io.tmpdir</code>.
      *
      * @return the new media package
-     * @throws EnvelopException
+     * @throws TallyException
      *           if creation of the new media package fails
      */
-    Envelop createNewEmpty() throws EnvelopException;
+    Envelop createNewEmpty() throws TallyException;
 }

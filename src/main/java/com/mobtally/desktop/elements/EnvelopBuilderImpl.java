@@ -19,7 +19,7 @@ public class EnvelopBuilderImpl implements EnvelopBuilder {
 
 
     @Override
-    public Envelop createNewEmpty() throws EnvelopException {
+    public Envelop createNewEmpty() throws TallyException {
         return new Envelop();
     }
 }

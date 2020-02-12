@@ -1,6 +1,6 @@
 package com.mobtally.desktop.elements;
 
-public class EnvelopException extends Exception {
+public class TallyException extends Exception {
 
     /** Serial version uid */
     private static final long serialVersionUID = -1645569283274593366L;
@@ -11,7 +11,7 @@ public class EnvelopException extends Exception {
      * @param msg
      *          the error message
      */
-    public EnvelopException(String msg) {
+    public TallyException(String msg) {
         super(msg);
     }
 
@@ -21,7 +21,7 @@ public class EnvelopException extends Exception {
      * @param t
      *          the original exception
      */
-    public EnvelopException(Throwable t) {
+    public TallyException(Throwable t) {
         super(t.getMessage(), t);
     }
 
@@ -33,7 +33,7 @@ public class EnvelopException extends Exception {
      * @param t
      *          the original exception
      */
-    public EnvelopException(String msg, Throwable t) {
+    public TallyException(String msg, Throwable t) {
         super(msg, t);
     }
 }
