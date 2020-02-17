@@ -16,7 +16,7 @@ public class CompanyReadPlatformServiceImpl implements CompanyReadPlatformServic
 
     @Override
     public Collection<Company> findAll() {
-        final Company company = Company.buildFindAllRequest();
+        final Company company = Company.buildFindAllTallyRequest();
         String request = TallyParser.getAsXml(company);
         logger.info("Company find all request data {}", request);
         return new ArrayList<>();

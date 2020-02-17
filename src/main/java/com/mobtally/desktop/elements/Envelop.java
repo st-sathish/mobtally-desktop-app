@@ -1,5 +1,7 @@
 package com.mobtally.desktop.elements;
 
+import com.mobtally.desktop.elements.body.Body;
+import com.mobtally.desktop.elements.body.ExportData;
 import com.mobtally.desktop.elements.header.Header;
 
 import javax.xml.bind.JAXBContext;
@@ -17,7 +19,7 @@ public class Envelop {
     private Header header;
 
     @XmlElement(name = "BODY")
-    private Object body;
+    private Body body;
 
     /** Context for serializing and deserializing */
     static final JAXBContext context;
@@ -46,11 +48,11 @@ public class Envelop {
         this.header = header;
     }
 
-    public Object getBody() {
+    public Body getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(Body body) {
         this.body = body;
     }
 }

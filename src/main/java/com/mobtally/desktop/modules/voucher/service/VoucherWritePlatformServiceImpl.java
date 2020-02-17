@@ -19,7 +19,7 @@ public class VoucherWritePlatformServiceImpl implements VoucherWritePlatformServ
                 .build();
         try {
             Envelop envelop = new Envelop();
-            envelop.setBody(data);
+            //envelop.setBody(data);
             Envelop result = httpClient.post(envelop);
         } catch (Exception e) {
             logger.error("Exception while saving voucher {}", e.getMessage());

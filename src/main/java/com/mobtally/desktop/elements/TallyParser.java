@@ -19,6 +19,7 @@ public final class TallyParser {
         try {
             Marshaller marshaller = Envelop.context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, false);
+            marshaller.setProperty("com.sun.xml.bind.xmlDeclaration", Boolean.FALSE);
             StringWriter writer = new StringWriter();
             marshaller.marshal(envelop, writer);
             return writer.toString();
