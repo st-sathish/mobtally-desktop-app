@@ -12,6 +12,10 @@ public class ExportData {
     @XmlElement(name = "REQUESTDESC")
     private RequestDesc requestDesc;
 
+    public ExportData() {
+        // required JAXB
+    }
+
     public RequestDesc getRequestDesc() {
         return requestDesc;
     }

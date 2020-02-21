@@ -3,6 +3,8 @@ package com.mobtally.desktop.elements;
 import com.mobtally.desktop.elements.body.Body;
 import com.mobtally.desktop.elements.body.ExportData;
 import com.mobtally.desktop.elements.header.Header;
+import org.eclipse.persistence.jaxb.dynamic.DynamicJAXBContext;
+import org.eclipse.persistence.jaxb.dynamic.DynamicJAXBContextFactory;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -18,11 +20,12 @@ public class Envelop {
     @XmlElement(name = "HEADER")
     private Header header;
 
-    @XmlElement(name = "BODY")
-    private Body body;
+    /*@XmlElement(name = "BODY")
+    private Body body;*/
 
     /** Context for serializing and deserializing */
-    static final JAXBContext context;
+    //static final JAXBContext context;
+    static final DynamicJAXBContext context;
 
     public Envelop() {
         // required JAXB
@@ -30,7 +33,8 @@ public class Envelop {
 
     static {
         try {
-            context = JAXBContext.newInstance("com.mobtally.desktop.elements", Envelop.class.getClassLoader());
+            //context = JAXBContext.newInstance("com.mobtally.desktop.elements", Envelop.class.getClassLoader());
+            context = DynamicJAXBContextFactory.createContext("com.mobtally.desktop.elements", Envelop.class.getClassLoader(), null);
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }
@@ -48,11 +52,11 @@ public class Envelop {
         this.header = header;
     }
 
-    public Body getBody() {
+    /*public Body getBody() {
         return body;
     }
 
     public void setBody(Body body) {
         this.body = body;
-    }
+    }*/
 }
