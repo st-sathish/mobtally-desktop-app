@@ -28,7 +28,7 @@ public class HttpClient {
 
     public HttpClient() {
         TallyConfigService tallyConfigService = BeanUtils.getBean(TallyConfigService.class);
-        this.url = tallyConfigService.getTallyHost() + File.separator + tallyConfigService.getTallyPort();
+        this.url = tallyConfigService.getTallyHost() + ":" + tallyConfigService.getTallyPort();
         logger.info("Tally server url {}", this.url);
     }
 
@@ -72,6 +72,7 @@ public class HttpClient {
             in = new BufferedReader(isr);
             String inputLine = "";
             while (in.readLine() != null) {
+                System.out.println("hello" + in.readLine());
                 inputLine = in.readLine();
             }
             return inputLine;

@@ -20,7 +20,7 @@ public class LedgerWritePlatformServiceImpl implements LedgerWritePlatformServic
         try {
             Envelop envelop = new Envelop();
             //envelop.setBody(data);
-            Envelop result = httpClient.post(envelop);
+            String result = httpClient.post(envelop.toString());
         } catch (Exception e) {
             logger.error("Exception while saving voucher {}", e.getMessage());
         }

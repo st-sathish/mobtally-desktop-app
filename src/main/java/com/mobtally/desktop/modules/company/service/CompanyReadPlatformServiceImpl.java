@@ -24,8 +24,8 @@ public class CompanyReadPlatformServiceImpl implements CompanyReadPlatformServic
         final ExportData exportData = Company.getExportData();
         Envelop envelop = new Envelop();
         Header header = new Header();
-        header.setId("1");
-        header.setTallyRequest(TallyRequest.EXPORT.toString());
+        header.setVersion("1");
+        header.setTallyRequest("Export Data");
         Body body = new Body();
         body.setExportData(exportData);
 
@@ -33,8 +33,40 @@ public class CompanyReadPlatformServiceImpl implements CompanyReadPlatformServic
         envelop.setBody(body);
         String request = TallyParser.getAsXml(envelop);
         logger.info("Company find all request data {}", request);
+
+        var xmlstring = "<ENVELOPE>"+
+"<HEADER>"+
+"<TALLYREQUEST>Export Data</TALLYREQUEST>"+
+"</HEADER>"+
+"<BODY>"+
+"<EXPORTDATA>"+
+"<REQUESTDESC>"+
+"<REPORTNAME>List of Accounts</REPORTNAME>"+
+"<STATICVARIABLES>"+
+"<SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>"+
+"</STATICVARIABLES>"+
+"</REQUESTDESC>"+
+"</EXPORTDATA>"+
+"</BODY>"+
+"</ENVELOPE>";
+
+        var company = "<ENVELOP>"+
+    "<HEADER>"+
+    "<VERSION>1</VERSION>"+
+    "<TALLYREQUEST>Export Data</TALLYREQUEST>"+
+    "</HEADER>"+
+    "<BODY>"+
+    "<EXPORTDATA>"+
+    "<REQUESTDESC>"+
+    "<REPORTNAME>List of Companies</REPORTNAME>"+
+    "<STATICVARIABLES>"+
+    "<SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>"+
+    "</STATICVARIABLES></REQUESTDESC>"+
+    "</EXPORTDATA>"+
+    "</BODY>"+
+    "</ENVELOP>";
         try {
-            String response = new HttpClient().post(request);
+            String response = new HttpClient().post(company);
             logger.info("Company response data {}", response);
         } catch (Exception e) {
             e.printStackTrace();
