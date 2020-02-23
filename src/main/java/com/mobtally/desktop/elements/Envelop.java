@@ -1,8 +1,7 @@
 package com.mobtally.desktop.elements;
 
-import com.mobtally.desktop.elements.body.Body;
-import com.mobtally.desktop.elements.body.ExportData;
 import com.mobtally.desktop.elements.header.Header;
+import org.eclipse.persistence.jaxb.JAXBContextProperties;
 import org.eclipse.persistence.jaxb.dynamic.DynamicJAXBContext;
 import org.eclipse.persistence.jaxb.dynamic.DynamicJAXBContextFactory;
 
@@ -12,6 +11,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.HashMap;
+import java.util.Map;
 
 @XmlRootElement(name = "ENVELOP")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -24,8 +25,8 @@ public class Envelop {
     private Body body;*/
 
     /** Context for serializing and deserializing */
-    //static final JAXBContext context;
-    static final DynamicJAXBContext context;
+    static final JAXBContext context;
+    //static final DynamicJAXBContext context;
 
     public Envelop() {
         // required JAXB
@@ -33,8 +34,7 @@ public class Envelop {
 
     static {
         try {
-            //context = JAXBContext.newInstance("com.mobtally.desktop.elements", Envelop.class.getClassLoader());
-            context = DynamicJAXBContextFactory.createContext("com.mobtally.desktop.elements", Envelop.class.getClassLoader(), null);
+            context = JAXBContext.newInstance("com.mobtally.desktop.elements", Envelop.class.getClassLoader());
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }
