@@ -44,6 +44,7 @@ public class CompanyReadPlatformServiceImpl implements CompanyReadPlatformServic
 "<REPORTNAME>List of Accounts</REPORTNAME>"+
 "<STATICVARIABLES>"+
 "<SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>"+
+"<ACCOUNTTYPE>All Inventory Masters</ACCOUNTTYPE>"+
 "</STATICVARIABLES>"+
 "</REQUESTDESC>"+
 "</EXPORTDATA>"+
@@ -52,7 +53,6 @@ public class CompanyReadPlatformServiceImpl implements CompanyReadPlatformServic
 
         var company = "<ENVELOP>"+
     "<HEADER>"+
-    "<VERSION>1</VERSION>"+
     "<TALLYREQUEST>Export Data</TALLYREQUEST>"+
     "</HEADER>"+
     "<BODY>"+
