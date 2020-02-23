@@ -47,13 +47,12 @@ public class HttpClient {
         return "";
     }
 
-    public Envelop post(Envelop requestData) throws Exception {
+    public String post(String tallyRequest) throws Exception {
         OutputStream out = null;
         BufferedReader in = null;
         HttpURLConnection httpConn = this.createConnection();
         try {
-            String tallyData = requestData.toString();
-            ByteArrayInputStream bin = new ByteArrayInputStream(tallyData.getBytes());
+            ByteArrayInputStream bin = new ByteArrayInputStream(tallyRequest.getBytes());
             ByteArrayOutputStream bout = new ByteArrayOutputStream();
             String SOAPAction = "";
 
@@ -75,7 +74,7 @@ public class HttpClient {
             while (in.readLine() != null) {
                 inputLine = in.readLine();
             }
-            return new Envelop();
+            return inputLine;
         } catch (Exception e) {
             throw e;
         } finally {

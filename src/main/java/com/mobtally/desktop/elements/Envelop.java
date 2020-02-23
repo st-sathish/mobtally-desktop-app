@@ -1,5 +1,6 @@
 package com.mobtally.desktop.elements;
 
+import com.mobtally.desktop.elements.body.Body;
 import com.mobtally.desktop.elements.header.Header;
 import org.eclipse.persistence.jaxb.JAXBContextProperties;
 import org.eclipse.persistence.jaxb.dynamic.DynamicJAXBContext;
@@ -21,8 +22,8 @@ public class Envelop {
     @XmlElement(name = "HEADER")
     private Header header;
 
-    /*@XmlElement(name = "BODY")
-    private Body body;*/
+    @XmlElement(name = "BODY")
+    private Body body;
 
     /** Context for serializing and deserializing */
     static final JAXBContext context;
@@ -52,11 +53,11 @@ public class Envelop {
         this.header = header;
     }
 
-    /*public Body getBody() {
+    public Body getBody() {
         return body;
     }
 
     public void setBody(Body body) {
         this.body = body;
-    }*/
+    }
 }
